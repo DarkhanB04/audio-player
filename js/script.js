@@ -21,7 +21,7 @@ for (let i = 0; i < songs.length - 74; i++) {
     <div class="list-text">
       <h4 class="music-name">${songs[i].name}</h4>
       <h6 class="music-artist">${songs[i].artist}</h6>
-      <audio src="./audio/${songs[i].path}.mp3" id="audio" class="${songs[i].path}"></audio>
+      <audio src="./audio/${songs[i].path}.mp3" preload="metadata" id="audio" class="${songs[i].path}"></audio>
       <h6 id="${songs[i].path}"class="song-duration-list">00:00</h6>
     </div>
   </div>`;
@@ -42,7 +42,7 @@ for (let i = 33; i < songs.length - 28; i++) {
     <div class="list-text">
       <h4 class="music-name">${songs[i].name}</h4>
       <h6 class="music-artist">${songs[i].artist}</h6>
-      <audio src="./audio/${songs[i].path}.mp3" id="audio" class="${songs[i].path}"></audio>
+      <audio src="./audio/${songs[i].path}.mp3" preload="metadata" id="audio" class="${songs[i].path}"></audio>
       <h6 id="${songs[i].path}"class="song-duration-list">00:00</h6>
     </div>
   </div>`;
@@ -63,7 +63,7 @@ for (let i = songs.length - 28; i < songs.length; i++) {
     <div class="list-text">
       <h4 class="music-name">${songs[i].name}</h4>
       <h6 class="music-artist">${songs[i].artist}</h6>
-      <audio src="./audio/${songs[i].path}.mp3" id="audio" class="${songs[i].path}"></audio>
+      <audio src="./audio/${songs[i].path}.mp3" preload="metadata" id="audio" class="${songs[i].path}"></audio>
       <h6 id="${songs[i].path}"class="song-duration-list">00:00</h6>
     </div>
   </div>`;
