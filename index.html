@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="css/style.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="icon" href="img/fv.png" type="image/x-icon">
+    <title>Darkhan's Audio player</title>
+  </head>
+  <body>
+    <!--   Logo & Toggle button    -->
+
+    <img src="img/logo.png" alt="logo" class="logo">
+    <div class="toggle"><i class="fa-solid fa-bars toggle-font"></i></div> 
+
+    <!--   Music disk container   -->
+
+    <div class="music-container">
+      <div class="img-container">
+        <img class="audio-img" src="" alt="" />
+      </div>
+      <div class="slider">
+        <input type="range" value="0" class="seek-bar" />
+        <span class="current-time"></span>
+        <span class="song-duration"></span>
+      </div>
+      <div class="img-title">
+        <div class="icons">
+          <div class="main-icons">
+            <i class="fa-solid fa-heart-circle-plus heart"></i>
+            <i class="fa-solid fa-backward backward-btn"></i>
+            <i class="fa-solid fa-play play-btn"></i>
+            <i class="fa-solid fa-forward forward-btn"></i>
+            <i class="fa-solid fa-arrow-rotate-right"></i>
+          </div>
+        </div>
+        <h1 class="song-name">Wannabe</h1>
+        <h3 class="song-artist">itzy</h3>
+      </div>
+    </div>
+
+    <!--   Music list container   -->
+
+    <div class="music-list-container">
+      <img src="img/logo.png" alt="logo" class="logo-list">
+      <div class="music-list">
+        <div class="accordion">
+          <div class="contentBx openings">
+            <div class="labels openings">
+              <i class="fa-solid fa-angle-down"></i>
+              <span class="span-op">Openings | Endings</span>
+            </div>
+          </div>
+          <div class="contentBx fav">
+            <div class="labels fav">
+              <i class="fa-solid fa-angle-down"></i>
+              <span class="span-op">Fav times</span>
+            </div>
+          </div>
+          <div class="contentBx kpop">
+            <div class="labels kpop">
+              <i class="fa-solid fa-angle-down"></i>
+              <span class="span-op">Korean</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/music-list.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
