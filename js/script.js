@@ -140,6 +140,8 @@ const setMusic = (i) => {
   document.body.style.width = "100%";
   document.body.style.backdropFilter =
     "blur(16px) brightness(0.4) contrast(90%) saturate(110%)";
+  document.body.style["-webkit-backdrop-filter"] =
+    "blur(16px) brightness(0.4) contrast(90%) saturate(110%)";
 
   setTimeout(() => {
     seekBar.max = music.duration;
