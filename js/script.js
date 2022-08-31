@@ -149,7 +149,7 @@ const setMusic = (i) => {
   setTimeout(() => {
     seekBar.max = music.duration;
     songDuration.innerHTML = formatTime(music.duration);
-  }, 1000);
+  }, 300);
 };
 setMusic(currentMusic);
 
@@ -166,7 +166,7 @@ setInterval(() => {
   }
   seekBar.value = music.currentTime;
   currentTime.innerHTML = formatTime(music.currentTime);
-}, 1000);
+}, 500);
 
 seekBar.addEventListener("change", () => {
   music.currentTime = seekBar.value;
