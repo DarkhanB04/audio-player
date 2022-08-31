@@ -14,13 +14,14 @@ window.addEventListener("load", () => {
   setMusic(currentMusic);
   playingNow();
 });
+console.log(songs.length);
 for (let i = 0; i < songs.length - 74; i++) {
   let rowOpening = `<div class="row" id ="row" row-index="${i}">
     <img src="${songs[i].cover}" class="row-img" alt="" />
     <div class="list-text">
       <h4 class="music-name">${songs[i].name}</h4>
       <h6 class="music-artist">${songs[i].artist}</h6>
-      <audio src="./audio/${songs[i].path}.mp3" id="audio" class="${songs[i].path}"></audio>
+      <audio src="./audio/${songs[i].path}.mp3" preload="metadata" id="audio" class="${songs[i].path}"></audio>
       <h6 id="${songs[i].path}"class="song-duration-list">00:00</h6>
     </div>
   </div>`;
@@ -31,7 +32,7 @@ for (let i = 0; i < songs.length - 74; i++) {
   setTimeout(() => {
     seekBar.max = music.duration;
     audioDur.innerText = formatTime(audioTag.duration);
-  }, 300);
+  }, 1000);
 }
 labels.addEventListener("click", function () {
   contentBx.classList.toggle("active");
@@ -42,7 +43,7 @@ for (let i = 33; i < songs.length - 28; i++) {
     <div class="list-text">
       <h4 class="music-name">${songs[i].name}</h4>
       <h6 class="music-artist">${songs[i].artist}</h6>
-      <audio src="./audio/${songs[i].path}.mp3" id="audio" class="${songs[i].path}"></audio>
+      <audio src="./audio/${songs[i].path}.mp3" id="audio"preload="metadata" class="${songs[i].path}"></audio>
       <h6 id="${songs[i].path}"class="song-duration-list">00:00</h6>
     </div>
   </div>`;
@@ -53,7 +54,7 @@ for (let i = 33; i < songs.length - 28; i++) {
   setTimeout(() => {
     seekBar.max = music.duration;
     audioDur.innerText = formatTime(audioTag.duration);
-  }, 300);
+  }, 1000);
 }
 labelsFav.addEventListener("click", function () {
   contentBxFav.classList.toggle("active");
@@ -64,7 +65,7 @@ for (let i = songs.length - 28; i < songs.length; i++) {
     <div class="list-text">
       <h4 class="music-name">${songs[i].name}</h4>
       <h6 class="music-artist">${songs[i].artist}</h6>
-      <audio src="./audio/${songs[i].path}.mp3" id="audio" class="${songs[i].path}"></audio>
+      <audio src="./audio/${songs[i].path}.mp3" id="audio" preload="metadata" class="${songs[i].path}"></audio>
       <h6 id="${songs[i].path}"class="song-duration-list">00:00</h6>
     </div>
   </div>`;
@@ -75,7 +76,7 @@ for (let i = songs.length - 28; i < songs.length; i++) {
   setTimeout(() => {
     seekBar.max = music.duration;
     audioDur.innerText = formatTime(audioTag.duration);
-  }, 300);
+  }, 1000);
 }
 labelsKpop.addEventListener("click", function () {
   contentBxKpop.classList.toggle("active");
@@ -148,7 +149,7 @@ const setMusic = (i) => {
   setTimeout(() => {
     seekBar.max = music.duration;
     songDuration.innerHTML = formatTime(music.duration);
-  }, 300);
+  }, 1000);
 };
 setMusic(currentMusic);
 
@@ -158,14 +159,6 @@ againAudio.addEventListener("click", function () {
   playMusic();
 });
 
-function formatTime(time) {
-  let min = Math.floor(time / 60);
-  min = min < 10 ? "0" + min : min;
-  let sec = Math.floor(time) % 60;
-  sec = sec < 10 ? "0" + sec : sec;
-  return `${min}:${sec}`;
-}
-
 setInterval(() => {
   if (formatTime(music.currentTime) == formatTime(music.duration)) {
     forwardBtn.click();
@@ -173,7 +166,7 @@ setInterval(() => {
   }
   seekBar.value = music.currentTime;
   currentTime.innerHTML = formatTime(music.currentTime);
-}, 500);
+}, 1000);
 
 seekBar.addEventListener("change", () => {
   music.currentTime = seekBar.value;
@@ -260,4 +253,12 @@ function clicked(element) {
   setMusic(currentMusic);
   playMusic();
   playingNow();
+}
+
+function formatTime(time) {
+  let min = Math.floor(time / 60);
+  min = min < 10 ? "0" + min : min;
+  let sec = Math.floor(time) % 60;
+  sec = sec < 10 ? "0" + sec : sec;
+  return `${min}:${sec}`;
 }
