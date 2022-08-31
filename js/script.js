@@ -14,7 +14,6 @@ window.addEventListener("load", () => {
   setMusic(currentMusic);
   playingNow();
 });
-console.log(songs.length);
 for (let i = 0; i < songs.length - 74; i++) {
   let rowOpening = `<div class="row" id ="row" row-index="${i}">
     <img src="${songs[i].cover}" class="row-img" alt="" />
@@ -30,8 +29,9 @@ for (let i = 0; i < songs.length - 74; i++) {
   let audioTag = document.querySelector(`.${songs[i].path}`);
 
   setTimeout(() => {
+    seekBar.max = music.duration;
     audioDur.innerText = formatTime(audioTag.duration);
-  }, 1000);
+  }, 300);
 }
 labels.addEventListener("click", function () {
   contentBx.classList.toggle("active");
@@ -51,8 +51,9 @@ for (let i = 33; i < songs.length - 28; i++) {
   let audioTag = document.querySelector(`.${songs[i].path}`);
 
   setTimeout(() => {
+    seekBar.max = music.duration;
     audioDur.innerText = formatTime(audioTag.duration);
-  }, 1000);
+  }, 300);
 }
 labelsFav.addEventListener("click", function () {
   contentBxFav.classList.toggle("active");
@@ -72,8 +73,9 @@ for (let i = songs.length - 28; i < songs.length; i++) {
   let audioTag = document.querySelector(`.${songs[i].path}`);
 
   setTimeout(() => {
+    seekBar.max = music.duration;
     audioDur.innerText = formatTime(audioTag.duration);
-  }, 1000);
+  }, 300);
 }
 labelsKpop.addEventListener("click", function () {
   contentBxKpop.classList.toggle("active");
