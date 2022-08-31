@@ -29,10 +29,10 @@ for (let i = 0; i < songs.length - 74; i++) {
   let audioDur = document.querySelector(`#${songs[i].path}`);
   let audioTag = document.querySelector(`.${songs[i].path}`);
 
-  setTimeout(() => {
-    seekBar.max = music.duration;
-    audioDur.innerText = formatTime(audioTag.duration);
-  }, 1000);
+  audioTag.addEventListener("loadeddata", () => {
+    let audioDura = audioTag.duration;
+    audioDur.innerText = formatTime(audioDura);
+  });
 }
 labels.addEventListener("click", function () {
   contentBx.classList.toggle("active");
@@ -51,10 +51,10 @@ for (let i = 33; i < songs.length - 28; i++) {
   let audioDur = document.querySelector(`#${songs[i].path}`);
   let audioTag = document.querySelector(`.${songs[i].path}`);
 
-  setTimeout(() => {
-    seekBar.max = music.duration;
-    audioDur.innerText = formatTime(audioTag.duration);
-  }, 1000);
+  audioTag.addEventListener("loadeddata", () => {
+    let audioDura = audioTag.duration;
+    audioDur.innerText = formatTime(audioDura);
+  });
 }
 labelsFav.addEventListener("click", function () {
   contentBxFav.classList.toggle("active");
@@ -73,10 +73,10 @@ for (let i = songs.length - 28; i < songs.length; i++) {
   let audioDur = document.querySelector(`#${songs[i].path}`);
   let audioTag = document.querySelector(`.${songs[i].path}`);
 
-  setTimeout(() => {
-    seekBar.max = music.duration;
-    audioDur.innerText = formatTime(audioTag.duration);
-  }, 1000);
+  audioTag.addEventListener("loadeddata", () => {
+    let audioDura = audioTag.duration;
+    audioDur.innerText = formatTime(audioDura);
+  });
 }
 labelsKpop.addEventListener("click", function () {
   contentBxKpop.classList.toggle("active");
